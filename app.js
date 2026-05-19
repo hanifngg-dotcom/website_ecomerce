@@ -8,7 +8,21 @@ const products = [
   { id: 7, title: 'Kamera Instan', category: 'electronics', price: 1799000, image: 'https://images.unsplash.com/photo-1519183071298-a2962e47b4a5?auto=format&fit=crop&w=640&q=80' },
   { id: 8, title: 'Matras Yoga', category: 'hobby', price: 99000, image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=640&q=80' },
   { id: 9, title: 'Kulkas Mini', category: 'home', price: 1499000, image: 'https://images.unsplash.com/photo-1517954336913-c4f41c7e3f15?auto=format&fit=crop&w=640&q=80' },
-  { id: 10, title: 'Jaket Musim Dingin', category: 'fashion', price: 329000, image: 'https://images.unsplash.com/photo-1542060742-149c2fa24feb?auto=format&fit=crop&w=640&q=80' }
+  { id: 10, title: 'Jaket Musim Dingin', category: 'fashion', price: 329000, image: 'https://images.unsplash.com/photo-1542060742-149c2fa24feb?auto=format&fit=crop&w=640&q=80' },
+  { id: 11, title: 'Lampu Meja LED', category: 'home', price: 129000, image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=640&q=80' },
+  { id: 12, title: 'Kursi Kantor Ergonomis', category: 'office', price: 850000, image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=640&q=80' },
+  { id: 13, title: 'Speaker Bluetooth', category: 'electronics', price: 429000, image: 'https://images.unsplash.com/photo-1512446818621-8f404c55a9ff?auto=format&fit=crop&w=640&q=80' },
+  { id: 14, title: 'Parfum Pria Premium', category: 'beauty', price: 399000, image: 'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=640&q=80' },
+  { id: 15, title: 'Set Perawatan Wajah', category: 'beauty', price: 269000, image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=640&q=80' },
+  { id: 16, title: 'Drone Kamera', category: 'electronics', price: 2399000, image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=640&q=80' },
+  { id: 17, title: 'Jam Dinding Modern', category: 'home', price: 149000, image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=640&q=80' },
+  { id: 18, title: 'Raket Tenis', category: 'hobby', price: 299000, image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=640&q=80' },
+  { id: 19, title: 'Boneka Bayi Lucu', category: 'kids', price: 129000, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=640&q=80' },
+  { id: 20, title: 'Sepeda Lipat', category: 'hobby', price: 1099000, image: 'https://images.unsplash.com/photo-1516222338256-0f531edb4b30?auto=format&fit=crop&w=640&q=80' },
+  { id: 21, title: 'Set Alat Tulis Premium', category: 'office', price: 89000, image: 'https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=640&q=80' },
+  { id: 22, title: 'Perlengkapan Makeup', category: 'beauty', price: 149000, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=640&q=80' },
+  { id: 23, title: 'Speaker Smart Home', category: 'electronics', price: 849000, image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=640&q=80' },
+  { id: 24, title: 'Sepatu Anak', category: 'kids', price: 119000, image: 'https://images.unsplash.com/photo-1485963631004-f2f4c5e7c0e3?auto=format&fit=crop&w=640&q=80' }
 ];
 
 const PROMO_CODES = {
@@ -25,6 +39,8 @@ const storage = {
     localStorage.setItem(key, JSON.stringify(value));
   }
 };
+
+console.log('ShopQR loaded: fitur unggulan interaktif siap');
 
 const cart = storage.load('shopqr-cart', []);
 const wishlist = storage.load('shopqr-wishlist', []);
@@ -396,6 +412,45 @@ function registerEvents() {
   dom.paymentMethod.addEventListener('change', refreshCheckout);
   dom.confirmOrder.addEventListener('click', confirmOrder);
   dom.scrollFeatures.addEventListener('click', () => document.getElementById('features').scrollIntoView({ behavior: 'smooth' }));
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('.feature-action');
+    if (!button) return;
+    const feature = button.closest('.feature-card')?.dataset.feature;
+    if (!feature) return;
+
+    if (feature === 'qris') {
+      if (cart.length === 0) {
+        alert('Keranjang kosong. Tambahkan produk terlebih dahulu untuk checkout QRIS.');
+        return;
+      }
+      dom.paymentMethod.value = 'qris';
+      openCheckout();
+      refreshCheckout();
+    }
+    if (feature === 'katalog') {
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }
+    if (feature === 'keranjang') {
+      renderCart();
+      openPanel(dom.cartPanel);
+    }
+    if (feature === 'riwayat') {
+      document.getElementById('orders').scrollIntoView({ behavior: 'smooth' });
+    }
+    if (feature === 'wishlist') {
+      renderWishlist();
+      openPanel(dom.wishlistPanel);
+    }
+    if (feature === 'promo') {
+      if (cart.length === 0) {
+        alert('Keranjang kosong. Tambahkan produk terlebih dahulu untuk menggunakan promo.');
+        return;
+      }
+      openCheckout();
+      dom.promoCodeInput.focus();
+    }
+  });
 }
 
 function initialize() {
