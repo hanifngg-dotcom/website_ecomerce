@@ -315,6 +315,43 @@ function renderPaymentPreview(total) {
   }
 }
 
+function handleFeatureClick(feature) {
+  console.log('Feature clicked:', feature);
+  if (feature === 'qris') {
+    if (cart.length === 0) {
+      alert('Keranjang kosong. Tambahkan produk terlebih dahulu untuk checkout QRIS.');
+      return;
+    }
+    dom.paymentMethod.value = 'qris';
+    openCheckout();
+    refreshCheckout();
+  }
+  if (feature === 'katalog') {
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+  }
+  if (feature === 'keranjang') {
+    renderCart();
+    openPanel(dom.cartPanel);
+  }
+  if (feature === 'riwayat') {
+    document.getElementById('orders').scrollIntoView({ behavior: 'smooth' });
+  }
+  if (feature === 'wishlist') {
+    renderWishlist();
+    openPanel(dom.wishlistPanel);
+  }
+  if (feature === 'promo') {
+    if (cart.length === 0) {
+      alert('Keranjang kosong. Tambahkan produk terlebih dahulu untuk menggunakan promo.');
+      return;
+    }
+    openCheckout();
+    dom.promoCodeInput.focus();
+  }
+}
+
+window.handleFeatureClick = handleFeatureClick;
+
 function applyPromo() {
   const code = dom.promoCodeInput.value.trim().toUpperCase();
   if (!code) {

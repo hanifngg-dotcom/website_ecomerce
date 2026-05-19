@@ -51,32 +51,32 @@
           <article class="feature-card" data-feature="qris">
             <h3>QRIS Pembayaran</h3>
             <p>Checkout cepat dengan QRIS. Buat invoice digital dan pindai QR code untuk pembayaran instan.</p>
-            <button class="button outline feature-action">Bayar dengan QRIS</button>
+            <button class="button outline feature-action" onclick="handleFeatureClick('qris')">Bayar dengan QRIS</button>
           </article>
           <article class="feature-card" data-feature="katalog">
             <h3>Katalog Produk</h3>
             <p>Filter kategori, cari produk, dan lihat detail tanpa meninggalkan halaman.</p>
-            <button class="button outline feature-action">Lihat Produk</button>
+            <button class="button outline feature-action" onclick="handleFeatureClick('katalog')">Lihat Produk</button>
           </article>
           <article class="feature-card" data-feature="keranjang">
             <h3>Keranjang Dinamis</h3>
             <p>Tambah, ubah jumlah, atau hapus produk. Total otomatis terhitung.</p>
-            <button class="button outline feature-action">Buka Keranjang</button>
+            <button class="button outline feature-action" onclick="handleFeatureClick('keranjang')">Buka Keranjang</button>
           </article>
           <article class="feature-card" data-feature="riwayat">
             <h3>Riwayat Pesanan</h3>
             <p>Simpan pesanan Anda, cek status, dan ulangi pembelian dalam satu klik.</p>
-            <button class="button outline feature-action">Lihat Pesanan</button>
+            <button class="button outline feature-action" onclick="handleFeatureClick('riwayat')">Lihat Pesanan</button>
           </article>
           <article class="feature-card" data-feature="wishlist">
             <h3>Wishlist</h3>
             <p>Favoritkan produk yang Anda sukai dan simpan untuk nanti.</p>
-            <button class="button outline feature-action">Buka Wishlist</button>
+            <button class="button outline feature-action" onclick="handleFeatureClick('wishlist')">Buka Wishlist</button>
           </article>
           <article class="feature-card" data-feature="promo">
             <h3>Promo & Kupon</h3>
             <p>Gunakan kode promo untuk diskon dan cashback langsung saat checkout.</p>
-            <button class="button outline feature-action">Gunakan Promo</button>
+            <button class="button outline feature-action" onclick="handleFeatureClick('promo')">Gunakan Promo</button>
           </article>
         </div>
       </section>
@@ -224,6 +224,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=2" defer></script>
 </body>
 </html>
