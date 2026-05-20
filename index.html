@@ -126,7 +126,21 @@
           <p>Subtotal</p>
           <strong id="cart-total">Rp 0</strong>
         </div>
+        <button class="button primary full-width" id="checkout-button">Checkout</button>
         <button class="button secondary full-width" id="clear-cart">Kosongkan Keranjang</button>
+      </div>
+    </aside>
+
+    <aside class="slide-panel hidden" id="wishlist-panel">
+      <div class="panel-header">
+        <h3>Wishlist</h3>
+        <button class="close-button" data-close="wishlist-panel">×</button>
+      </div>
+      <div id="wishlist-items" class="cart-items"></div>
+      <div class="panel-footer">
+        <button class="button secondary full-width" id="clear-wishlist">Kosongkan Wishlist</button>
+      </div>
+    </aside>
 
     <div class="checkout-modal hidden" id="checkout-modal">
       <div class="checkout-card">

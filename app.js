@@ -59,6 +59,7 @@ const dom = {
   clearCartButton: document.getElementById('clear-cart'),
   wishlistPanel: document.getElementById('wishlist-panel'),
   wishlistItems: document.getElementById('wishlist-items'),
+  clearWishlistButton: document.getElementById('clear-wishlist'),
   openCart: document.getElementById('open-cart'),
   openWishlist: document.getElementById('open-wishlist'),
   modalBackdrop: document.getElementById('modal-backdrop'),
@@ -328,6 +329,18 @@ function clearCart() {
   alert('Keranjang berhasil dikosongkan.');
 }
 
+function clearWishlist() {
+  if (wishlist.length === 0) {
+    alert('Wishlist sudah kosong.');
+    return;
+  }
+  wishlist.length = 0;
+  saveState();
+  renderProducts();
+  renderWishlist();
+  alert('Wishlist berhasil dikosongkan.');
+}
+
 function repeatOrder(orderId) {
   const order = orders.find(item => item.id === orderId);
   if (!order) return;
@@ -479,6 +492,7 @@ function registerEvents() {
   }));
   dom.checkoutButton.addEventListener('click', openCheckout);
   dom.clearCartButton.addEventListener('click', clearCart);
+  dom.clearWishlistButton.addEventListener('click', clearWishlist);
   dom.applyPromoButton.addEventListener('click', applyPromo);
   dom.paymentMethod.addEventListener('change', refreshCheckout);
   dom.confirmOrder.addEventListener('click', confirmOrder);
