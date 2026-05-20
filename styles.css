@@ -390,7 +390,7 @@ a {
   box-shadow: -24px 0 60px rgba(0,0,0,0.5);
   transform: translateX(100%);
   transition: transform 0.25s ease;
-  z-index: 30;
+  z-index: 45;
   display: flex;
   flex-direction: column;
   padding: 24px;
@@ -436,7 +436,7 @@ a {
   background: rgba(10, 16, 29, 0.78);
   display: grid;
   place-items: center;
-  z-index: 40;
+  z-index: 50;
   padding: 24px;
 }
 
