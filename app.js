@@ -154,6 +154,9 @@ function toggleWishlist(productId) {
   saveState();
   renderProducts();
   renderWishlist();
+  if (index < 0) {
+    openPanel(dom.wishlistPanel);
+  }
 }
 
 function renderCart() {
