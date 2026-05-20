@@ -56,6 +56,7 @@ const dom = {
   cartItems: document.getElementById('cart-items'),
   cartTotal: document.getElementById('cart-total'),
   checkoutButton: document.getElementById('checkout-button'),
+  clearCartButton: document.getElementById('clear-cart'),
   wishlistPanel: document.getElementById('wishlist-panel'),
   wishlistItems: document.getElementById('wishlist-items'),
   openCart: document.getElementById('open-cart'),
@@ -315,6 +316,37 @@ function renderPaymentPreview(total) {
   }
 }
 
+function clearCart() {
+  if (cart.length === 0) {
+    alert('Keranjang sudah kosong.');
+    return;
+  }
+  cart.length = 0;
+  saveState();
+  updateCartCount();
+  renderCart();
+  alert('Keranjang berhasil dikosongkan.');
+}
+
+function repeatOrder(orderId) {
+  const order = orders.find(item => item.id === orderId);
+  if (!order) return;
+  order.items.forEach(item => {
+    const product = products.find(productItem => productItem.title === item.title);
+    if (!product) return;
+    const existing = cart.find(cartItem => cartItem.id === product.id);
+    if (existing) {
+      existing.quantity += item.quantity;
+    } else {
+      cart.push({ ...product, quantity: item.quantity });
+    }
+  });
+  saveState();
+  updateCartCount();
+  renderCart();
+  openPanel(dom.cartPanel);
+}
+
 function handleFeatureClick(feature) {
   console.log('Feature clicked:', feature);
   if (feature === 'qris') {
@@ -428,6 +460,7 @@ function renderOrders() {
         <span>Total</span>
         <span>${formatCurrency(order.total)}</span>
       </div>
+      <button class="button secondary repeat-order" data-order-id="${order.id}">Ulangi Pesanan</button>
     `;
     dom.ordersList.appendChild(card);
   });
@@ -445,6 +478,7 @@ function registerEvents() {
     else closePanels();
   }));
   dom.checkoutButton.addEventListener('click', openCheckout);
+  dom.clearCartButton.addEventListener('click', clearCart);
   dom.applyPromoButton.addEventListener('click', applyPromo);
   dom.paymentMethod.addEventListener('change', refreshCheckout);
   dom.confirmOrder.addEventListener('click', confirmOrder);
@@ -487,6 +521,12 @@ function registerEvents() {
       openCheckout();
       dom.promoCodeInput.focus();
     }
+  });
+
+  document.addEventListener('click', (event) => {
+    const repeatButton = event.target.closest('.repeat-order');
+    if (!repeatButton) return;
+    repeatOrder(repeatButton.dataset.orderId);
   });
 }
 
