@@ -1,28 +1,28 @@
 const products = [
-  { id: 1, title: 'Sneakers Sporty', category: 'fashion', price: 259000, image: 'https://images.unsplash.com/photo-1519741491911-1e66cff329fa?auto=format&fit=crop&w=640&q=80' },
-  { id: 2, title: 'Smartwatch Elegan', category: 'electronics', price: 1289000, image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=640&q=80' },
-  { id: 3, title: 'Blender Dapur', category: 'home', price: 349000, image: 'https://images.unsplash.com/photo-1524594154900-39124aa544dc?auto=format&fit=crop&w=640&q=80' },
-  { id: 4, title: 'Headphone Gaming', category: 'electronics', price: 699000, image: 'https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?auto=format&fit=crop&w=640&q=80' },
-  { id: 5, title: 'Tas Ransel Travel', category: 'fashion', price: 189000, image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=640&q=80' },
-  { id: 6, title: 'Set Peralatan BBQ', category: 'home', price: 219000, image: 'https://images.unsplash.com/photo-1533089860892-a7d0d7bd1ec0?auto=format&fit=crop&w=640&q=80' },
-  { id: 7, title: 'Kamera Instan', category: 'electronics', price: 1799000, image: 'https://images.unsplash.com/photo-1519183071298-a2962e47b4a5?auto=format&fit=crop&w=640&q=80' },
-  { id: 8, title: 'Matras Yoga', category: 'hobby', price: 99000, image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=640&q=80' },
-  { id: 9, title: 'Kulkas Mini', category: 'home', price: 1499000, image: 'https://images.unsplash.com/photo-1517954336913-c4f41c7e3f15?auto=format&fit=crop&w=640&q=80' },
-  { id: 10, title: 'Jaket Musim Dingin', category: 'fashion', price: 329000, image: 'https://images.unsplash.com/photo-1542060742-149c2fa24feb?auto=format&fit=crop&w=640&q=80' },
-  { id: 11, title: 'Lampu Meja LED', category: 'home', price: 129000, image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=640&q=80' },
-  { id: 12, title: 'Kursi Kantor Ergonomis', category: 'office', price: 850000, image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=640&q=80' },
-  { id: 13, title: 'Speaker Bluetooth', category: 'electronics', price: 429000, image: 'https://images.unsplash.com/photo-1512446818621-8f404c55a9ff?auto=format&fit=crop&w=640&q=80' },
-  { id: 14, title: 'Parfum Pria Premium', category: 'beauty', price: 399000, image: 'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=640&q=80' },
-  { id: 15, title: 'Set Perawatan Wajah', category: 'beauty', price: 269000, image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=640&q=80' },
-  { id: 16, title: 'Drone Kamera', category: 'electronics', price: 2399000, image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=640&q=80' },
-  { id: 17, title: 'Jam Dinding Modern', category: 'home', price: 149000, image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=640&q=80' },
-  { id: 18, title: 'Raket Tenis', category: 'hobby', price: 299000, image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=640&q=80' },
-  { id: 19, title: 'Boneka Bayi Lucu', category: 'kids', price: 129000, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=640&q=80' },
-  { id: 20, title: 'Sepeda Lipat', category: 'hobby', price: 1099000, image: 'https://images.unsplash.com/photo-1516222338256-0f531edb4b30?auto=format&fit=crop&w=640&q=80' },
-  { id: 21, title: 'Set Alat Tulis Premium', category: 'office', price: 89000, image: 'https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=640&q=80' },
-  { id: 22, title: 'Perlengkapan Makeup', category: 'beauty', price: 149000, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=640&q=80' },
-  { id: 23, title: 'Speaker Smart Home', category: 'electronics', price: 849000, image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=640&q=80' },
-  { id: 24, title: 'Sepatu Anak', category: 'kids', price: 119000, image: 'https://images.unsplash.com/photo-1485963631004-f2f4c5e7c0e3?auto=format&fit=crop&w=640&q=80' }
+  { id: 1, title: 'Sneakers Sporty', category: 'fashion', price: 259000, description: 'Sepatu sneaker berkualitas tinggi dengan desain sporty modern untuk aktivitas sehari-hari dan olahraga ringan.', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=640&q=80' },
+  { id: 2, title: 'Smartwatch Elegan', category: 'electronics', price: 1289000, description: 'Jam tangan pintar dengan layar touchscreen AMOLED, monitor detak jantung, dan daya tahan baterai 5 hari.', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=640&q=80' },
+  { id: 3, title: 'Blender Dapur', category: 'home', price: 349000, description: 'Blender profesional dengan motor 1000W untuk menghaluskan berbagai bahan makanan hingga es batu.', image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&q=80' },
+  { id: 4, title: 'Headphone Gaming', category: 'electronics', price: 699000, description: 'Headphone gaming dengan surround sound 7.1, mikrofon noise cancelling, dan RGB lighting.', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=640&q=80' },
+  { id: 5, title: 'Tas Ransel Travel', category: 'fashion', price: 189000, description: 'Ransel travel dengan kapasitas 40L, multiple pockets, dan material tahan air untuk perjalanan jauh.', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=640&q=80' },
+  { id: 6, title: 'Set Peralatan BBQ', category: 'home', price: 219000, description: 'Paket lengkap alat BBQ termasuk spatula, penjepit, garpu, dan sikat pembersih untuk memanggang sempurna.', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561404?auto=format&fit=crop&w=640&q=80' },
+  { id: 7, title: 'Kamera Instan', category: 'electronics', price: 1799000, description: 'Kamera instan dengan teknologi termal printer, hasil foto langsung keluar dalam 10 detik.', image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=640&q=80' },
+  { id: 8, title: 'Matras Yoga', category: 'hobby', price: 99000, description: 'Matras yoga anti slip dengan ketebalan 6mm, nyaman untuk berbagai pose yoga dan meditasi.', image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=640&q=80' },
+  { id: 9, title: 'Kulkas Mini', category: 'home', price: 1499000, description: 'Kulkas mini berkapasitas 50L dengan kontrol suhu otomatis dan kunci keamanan untuk kamar atau kantor.', image: 'https://images.unsplash.com/photo-1584622614875-2953067828d7?auto=format&fit=crop&w=640&q=80' },
+  { id: 10, title: 'Jaket Musim Dingin', category: 'fashion', price: 329000, description: 'Jaket musim dingin dengan insulasi thermal, tahan angin dan air, tersedia dalam berbagai warna.', image: 'https://images.unsplash.com/photo-1539533057440-7814a9d7f521?auto=format&fit=crop&w=640&q=80' },
+  { id: 11, title: 'Lampu Meja LED', category: 'home', price: 129000, description: 'Lampu meja LED hemat energi dengan 3 mode pencahayaan, cocok untuk bekerja atau membaca.', image: 'https://images.unsplash.com/photo-1565636192335-14c46fa1120d?auto=format&fit=crop&w=640&q=80' },
+  { id: 12, title: 'Kursi Kantor Ergonomis', category: 'office', price: 850000, description: 'Kursi kantor ergonomis dengan lumbar support dan sandaran kepala yang dapat disesuaikan.', image: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=640&q=80' },
+  { id: 13, title: 'Speaker Bluetooth', category: 'electronics', price: 429000, description: 'Speaker bluetooth portabel dengan audio stereo 360 derajat dan daya tahan baterai 12 jam.', image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=640&q=80' },
+  { id: 14, title: 'Parfum Pria Premium', category: 'beauty', price: 399000, description: 'Parfum pria premium dengan aroma maskulin yang tahan lama hingga 8 jam.', image: 'https://images.unsplash.com/photo-1596377686009-796b88c72406?auto=format&fit=crop&w=640&q=80' },
+  { id: 15, title: 'Set Perawatan Wajah', category: 'beauty', price: 269000, description: 'Paket lengkap perawatan wajah dengan cleanser, toner, essence, dan moisturizer untuk kulit sehat.', image: 'https://images.unsplash.com/photo-1596401643114-61f5ce65bdf8?auto=format&fit=crop&w=640&q=80' },
+  { id: 16, title: 'Drone Kamera', category: 'electronics', price: 2399000, description: 'Drone dengan kamera 4K, stabilisasi gimbal 3-axis, jangkauan transmisi hingga 7km.', image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=640&q=80' },
+  { id: 17, title: 'Jam Dinding Modern', category: 'home', price: 149000, description: 'Jam dinding modern dengan desain minimalis, gerakan senyap, cocok untuk semua ruangan.', image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=640&q=80' },
+  { id: 18, title: 'Raket Tenis', category: 'hobby', price: 299000, description: 'Raket tenis dengan frame carbon fiber, grip ergonomis, ideal untuk pemain pemula hingga intermediate.', image: 'https://images.unsplash.com/photo-1554224311-beee415c201f?auto=format&fit=crop&w=640&q=80' },
+  { id: 19, title: 'Boneka Bayi Lucu', category: 'kids', price: 129000, description: 'Boneka bayi empuk dan aman, terbuat dari bahan lembut non-toxic, sempurna untuk teman tidur anak.', image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=640&q=80' },
+  { id: 20, title: 'Sepeda Lipat', category: 'hobby', price: 1099000, description: 'Sepeda lipat ringan dengan roda 20 inch, cocok untuk commuting dan mudah disimpan.', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=640&q=80' },
+  { id: 21, title: 'Set Alat Tulis Premium', category: 'office', price: 89000, description: 'Set lengkap alat tulis premium dengan pena gel, pensil, penggaris, dan penghapus berkualitas tinggi.', image: 'https://images.unsplash.com/photo-1567029816524-f2b53e31457b?auto=format&fit=crop&w=640&q=80' },
+  { id: 22, title: 'Perlengkapan Makeup', category: 'beauty', price: 149000, description: 'Kit lengkap makeup untuk pemula dengan lipstik, eyeshadow, blush on, dan brush berkualitas.', image: 'https://images.unsplash.com/photo-1596462502278-af396f999424?auto=format&fit=crop&w=640&q=80' },
+  { id: 23, title: 'Speaker Smart Home', category: 'electronics', price: 849000, description: 'Speaker pintar dengan AI assistant, kontrol suara, dan integrasi IoT untuk rumah cerdas.', image: 'https://images.unsplash.com/photo-1599669656522-f37ef2ddc3f9?auto=format&fit=crop&w=640&q=80' },
+  { id: 24, title: 'Sepatu Anak', category: 'kids', price: 119000, description: 'Sepatu anak nyaman dengan sol ortopedik, desain ceria, dan material breathable untuk aktivitas sehari-hari.', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=640&q=80' }
 ];
 
 const PROMO_CODES = {
@@ -119,6 +119,7 @@ function renderProducts() {
     article.querySelector('.product-image').alt = product.title;
     article.querySelector('.product-title').textContent = product.title;
     article.querySelector('.product-category').textContent = product.category;
+    article.querySelector('.product-description').textContent = product.description;
     article.querySelector('.product-price').textContent = formatCurrency(product.price);
     const addButton = article.querySelector('.add-to-cart');
     const wishlistButton = article.querySelector('.wishlist-toggle');
